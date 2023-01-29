@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class PickupController : MonoBehaviour
+namespace MoreMountains.TopDownEngine
 {
-    private void OnTriggerEnter(Collider other)
+    public class PickupController : MonoBehaviour
     {
-        if (other.gameObject.transform.root.name.Contains("Coin"))
+        private void OnTriggerEnter(Collider other)
         {
-            MGameManager.instance.coins++;
+            if (other.gameObject.transform.root.name.Contains("Coin"))
+            {
+                MGameManager.instance.coins++;
+            }
         }
     }
 }
